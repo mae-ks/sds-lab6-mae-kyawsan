@@ -12,3 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from collections import defaultdict
+
+states_with_capitals = {'New York':'Albany', 'California': 'Sacramento', 'Texas': 'Austin', 'Colorado': 'Denver','Hawaii': 'Honolulu'}
+
+def validate_user_response(user_response):
+    result = defaultdict(bool)
+    for state, capital in user_response.items():
+        if capital.lower() == states_with_capitals[state]:
+            result[state] = True
+        else: result[state] = False
+    return result
+
+
+            
+
+
+
